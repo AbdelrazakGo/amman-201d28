@@ -64,10 +64,12 @@ Test this function by hand in the console to get it working, and when you think 
 // testSumAndMultiply(4,7,5);
 
 function sumAndMultiply(a, b, c){
-var sum1 = sum(a,b);
-var sum2 = sum(sum1[0],c);
-var mult1 = multiply(a,b);
-var mult2 = multiply(mult1[0],c)
+var sum1 = sum(a,b); //[11, '...']
+var sum2 = sum(sum1[0],c); //[16, '....']
+// a + b + c
+var mult1 = multiply(a,b); //[4*7, '....']
+var mult2 = multiply(mult1[0],c) //[4*7*5, '......']
+// a * b * c
 
   return [sum2[0],mult2[0],`${a} and ${b} and ${c} sum to ${sum2[0]}.`,`The product of ${a} and ${b} and ${c} is ${mult2[0]}.`]
 }
@@ -95,6 +97,7 @@ let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
 let sum = 0;
+
 for (var i = 0; i < sumArr.length; i++) {
   sum += sumArr[i];
   
@@ -145,10 +148,16 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
 
+  let mult3 = 1;
+  for (var i = 0; i<multArr.length; i++) {
+    mult3 *= multArr[i];
+  }
+  
+  return [mult3,`The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${mult3}.`]
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
